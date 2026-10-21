@@ -12,6 +12,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
 
 function NotFoundComponent() {
   return (
@@ -78,11 +80,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Website Builder" },
-      { name: "description", content: "Create your future on the leading website builder." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Website Builder" },
-      { property: "og:description", content: "Create your future on the leading website builder." },
+      { title: "Nexites — Website Builder" },
+      { name: "description", content: "Create, design and grow your website with Nexites." },
+      { name: "author", content: "Nexites" },
+      { property: "og:title", content: "Nexites — Website Builder" },
+      { property: "og:description", content: "Create, design and grow your website with Nexites." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
@@ -123,8 +125,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="font-sans text-foreground">
+        <SiteHeader />
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+        <SiteFooter />
+      </div>
     </QueryClientProvider>
   );
 }
