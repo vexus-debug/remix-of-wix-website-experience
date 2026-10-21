@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { Plus, ArrowUpRight, Sparkles, ArrowRight, Check, Globe, TrendingUp, CalendarCheck } from "lucide-react";
-import { H2, Btn, Sec, Mock, StartLink, PHOTOS } from "@/components/site/primitives";
+import { H2, Sec, Mock, StartLink, PHOTOS } from "@/components/site/primitives";
 const { ceramics, fashion, florist } = PHOTOS;
 
 export const Route = createFileRoute("/")({
